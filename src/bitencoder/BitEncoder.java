@@ -28,8 +28,7 @@ public class BitEncoder
     }
     
     public boolean get (int index) {
-        int x = (1 << index);
-        return ( _value & x ) == x;
+        return ( (_value >> index) & 1 ) == 1;
     }
     
     public byte getByte (int index) {
